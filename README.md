@@ -1,2 +1,2 @@
-# lunux-host-backup
+# linux-host-backup
 mysqldump and rsnapshot
