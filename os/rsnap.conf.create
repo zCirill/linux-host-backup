@@ -1,0 +1,11 @@
+TARGET=$1
+IP=$2
+
+cp /etc/rsnapshot.conf.d/available/blanc.conf /etc/rsnapshot.conf.d/available/$TARGET.conf
+echo "snapshot_root	/storage/blanc/" >> /etc/rsnapshot.conf.d/available/$TARGET.conf
+echo "lockfile	/var/run/rsnapshot.blanc.pid" >> /etc/rsnapshot.conf.d/available/$TARGET.conf
+echo "logfile	/var/log/rsnapshot.blanc.log" >> /etc/rsnapshot.conf.d/available/$TARGET.conf
+echo "backup_script	/usr/bin/ssh root@$IP \"/usr/local/etc/dump.all.psq.db.sh\"	unused1/" >> /etc/rsnapshot.conf.d/available/$TARGET.conf
+echo "backup	root@$IP:/	." >> /etc/rsnapshot.conf.d/available/$TARGET.conf
+
+sed -i "s/blanc/$TARGET/g" /etc/rsnapshot.conf.d/available/$TARGET.conf

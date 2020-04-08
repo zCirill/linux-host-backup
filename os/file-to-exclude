@@ -1,0 +1,14 @@
+/tmp/*
+/dev/*
+**lost+found
+/var/run/*
+/proc/*
+/run/*
+/sys/*
+/lost+found
+/var/lib/mysql
+/var/log/*/*.gz
+/var/log/*/*.log.1
+/etc/udev/rules.d/70-persistent-net.rules
+/etc/network/interfaces
+/var/lib/postgresql/*
